@@ -1,11 +1,10 @@
 <h1><%= @bag.brand %></h1>
 
-<p><strong>State:</strong> <%= @bag.state %></p>
-<p><strong>Capacity:</strong> <%= @bag.capacity %> liters</p>
-<p><strong>Usage:</strong> <%= @bag.usage %></p>
-<p><strong>Address:</strong> <%= @bag.address %></p>
-<p><strong>Availability:</strong> <%= @bag.availability ? 'Available' : 'Not Available' %></p>
-<p><strong>Daily Price:</strong> $<%= @bag.daily_price %> per day</p>
+<p><strong>Etat :</strong> <%= @bag.state %></p>
+<p><strong>Capacité :</strong> <%= @bag.capacity %> liters</p>
+<p><strong>Usage :</strong> <%= @bag.usage %></p>
+<p><strong>Adresse :</strong> <%= @bag.address %></p>
+<p><strong>Tarif journalier : </strong><%= @bag.daily_price %>€ per day</p>
 
 <%= link_to 'Back to Bags', bags_path, class: 'btn btn-secondary' %>
 
