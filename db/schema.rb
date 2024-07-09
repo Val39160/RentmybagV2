@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema[7.1].define(version: 2024_07_08_141453) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_09_091126) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -30,12 +29,12 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_08_141453) do
   end
 
   create_table "bookings", force: :cascade do |t|
+    t.date "start_date"
+    t.date "end_date"
+    t.decimal "total_price"
     t.bigint "user_id", null: false
-    t.bigint "bag_id", null: false
-    t.date "rental_start"
-    t.date "rental_end"
-    t.float "rental_price"
     t.string "status"
+    t.bigint "bag_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["bag_id"], name: "index_bookings_on_bag_id"
@@ -54,19 +53,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_08_141453) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-
-  create_table "visitors", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
-    t.string "phone"
-    t.string "address"
-    t.string "password"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   add_foreign_key "bags", "users"
   add_foreign_key "bookings", "bags"
   add_foreign_key "bookings", "users"
-
 end
