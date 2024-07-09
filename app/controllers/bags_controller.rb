@@ -1,4 +1,7 @@
 class BagsController < ApplicationController
+  def new
+    @bags = Bag.new
+  end
 
   def index
     @bags = Bag.all
@@ -19,7 +22,6 @@ class BagsController < ApplicationController
   end
 
   private
-
 
   def bag_params
     params.require(:bag).permit(:brand, :state, :capacity, :usage, :address, :availability, :daily_price)
