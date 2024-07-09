@@ -4,7 +4,8 @@
   <div class="bags">
     <% @bags.each do |bag| %>
       <div class="bag">
-        <h2><%= link_to bag.brand, bag_path(bag) %></h2>
+        <div class="bag-image" style="background-image: url('/path/to/your/image.jpg');"></div>
+        <h2><%= link_to bag.brand, bag_path(bag), class: 'btn-primary' %></h2>
         <p><strong>Etat :</strong> <%= bag.state %></p>
         <p><strong>Capacité :</strong> <%= bag.capacity %> litres</p>
         <p><strong>Usage :</strong> <%= bag.usage %></p>
