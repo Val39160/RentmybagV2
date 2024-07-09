@@ -4,18 +4,18 @@
   <div class="bags">
     <% @bags.each do |bag| %>
       <div class="bag">
-        <h2><%= link_to bag.brand, bag_path(bag) %></h2>
-        <p><strong>State:</strong> <%= bag.state %></p>
-        <p><strong>Capacity:</strong> <%= bag.capacity %> liters</p>
-        <p><strong>Usage:</strong> <%= bag.usage %></p>
-        <p><strong>Address:</strong> <%= bag.address %></p>
-        <p><strong>Availability:</strong> <%= bag.availability ? 'Available' : 'Not Available' %></p>
-        <p><strong>Daily Price:</strong> $<%= bag.daily_price %> per day</p>
+        <div class="bag-image" style="background-image: url('/path/to/your/image.jpg');"></div>
+        <h2><%= link_to bag.brand, bag_path(bag), class: 'btn-primary' %></h2>
+        <p><strong>Etat :</strong> <%= bag.state %></p>
+        <p><strong>Capacité :</strong> <%= bag.capacity %> litres</p>
+        <p><strong>Usage :</strong> <%= bag.usage %></p>
+        <p><strong>Adresse :</strong> <%= bag.address %></p>
+        <p><strong>Tarif journalier : </strong><%= bag.daily_price %>€ par jour</p>
       </div>
     <% end %>
   </div>
 <% else %>
-  <p>No bags available at the moment.</p>
+  <p>Aucun sac disponible! revenez plus tard!.</p>
 <% end %>
 
 <%= link_to 'New Bag', new_bag_path, class: 'btn btn-primary' if user_signed_in? %>
