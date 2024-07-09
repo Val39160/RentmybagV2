@@ -1,5 +1,13 @@
 class BagsController < ApplicationController
 
+  def index
+    @bags = Bag.all
+  end
+
+  def show
+    @bag = Bag.find(params[:id])
+  end
+
   def create
     @bag = Bag.new(bag_params)
     @bag.user_id = current_user.id
