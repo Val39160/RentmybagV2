@@ -2,10 +2,11 @@ class BagsController < ApplicationController
 
   def create
     @bag = Bag.new(bag_params)
+    @bag.user_id = current_user.id
     if @bag.save
       redirect_to root_path
     else
-      render 'new'
+      render 'new', notice: "Impossible de créer un nouveau sac"
     end
   end
 
