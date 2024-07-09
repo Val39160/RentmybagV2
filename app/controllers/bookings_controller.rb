@@ -25,13 +25,13 @@ class BookingsController < ApplicationController
     end
   end
 
-    private
-
-    def booking_params
-      params.require(:booking).permit(:bag_id, :start_date, :end_date, :total_price, :status)
-    end
-
-    def update_params
-      params.require(:booking).permit(:status)
-    end
+  private
+  
+  def booking_params
+    params.require(:booking).permit(:bag_id, :start_date, :end_date, :total_price, :status)
   end
+
+  def update_params
+    params.require(:booking).permit(:status)
+  end
+end
