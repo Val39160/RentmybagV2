@@ -15,12 +15,13 @@
 @import "dashboard/profile";
 
 .navbar {
-  background-color: #333;
+  background-color: #fff;
   color: #fff;
   padding: 0.5rem 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  box-shadow: #555;
 }
 
 .navbar-container {
@@ -28,6 +29,10 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
+}
+
+.navbar-brand a {
+  text-decoration: none;
 }
 
 .navbar-brand h2 {
