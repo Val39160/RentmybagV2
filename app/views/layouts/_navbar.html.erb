@@ -1,17 +1,19 @@
 <nav class="navbar">
   <div class="navbar-container">
-    <h2 class="navbar-brand">RentMyBag</h2>
-    <%# <div class="navbar-search"> %>
-      <%# <%= form_with url: search_path, method: :get, local: true do %>
-        <%# <input type="text" name="location" placeholder="Enter city, country" class="navbar-input">
-        <select name="usage" class="navbar-dropdown"> %>
-          <%# <option value="adventure">Aventure</option>
+    <h2 class="navbar-brand">
+      <%= link_to 'RentMyBag', root_path %>
+    </h2>
+    <div class="navbar-search">
+      <% form_with url: search_path, method: :get, local: true do %>
+        <input type="text" name="location" placeholder="Enter city, country" class="navbar-input">
+        <select name="usage" class="navbar-dropdown">
+          <option value="adventure">Aventure</option>
           <option value="business">Business</option>
-          <option value="leisure">Loisir</option> %>
-        <%# </select>
+          <option value="leisure">Loisir</option>
+        </select>
         <button type="submit" class="navbar-button">Search</button>
       <% end %>
-    <%# </div> %>
+    </div>
     <div class="profile-icon">
     </div>
   </div>
