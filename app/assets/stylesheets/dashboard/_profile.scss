@@ -3,24 +3,38 @@
   flex-wrap: wrap;
   justify-content: center;
   margin-top: 50px;
+  text-align: center;
+  padding: 10px;
 }
 
 .card-profile {
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  width: 250px;
-  margin-left: 15px;
+  width: 260px;
 }
 
 .card-bags {
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  width: 250px;
+  width: 260px;
   margin-left: 15px;
 }
 
-li {
-  text-decoration: none;
+ul {
+  list-style: none;
+}
+
+.card-reservations {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 50px;
+  text-align: center;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin-left: 300px;
+  margin-right: 300px;
 }

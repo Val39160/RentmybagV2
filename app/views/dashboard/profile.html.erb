@@ -12,17 +12,16 @@
     </div>
     <div class="card-bags">
       <h2>Mes sacs</h2>
-      <ul>
         <% @bags.each do |bag| %>
-          <li><%= bag.brand %>, <%= bag.capacity %> <%= bag.daily_price %></li>
+          <p><%= bag.brand %></p>
+          <%= link_to 'Voir Sac', bag_path(bag), class: 'btn btn-primary' %>
         <% end %>
-      </ul>
     </div>
   </div>
   <div id="second-container" class="card-reservations">
     <h2>Mes réservations</h2>
-    <ul>
-      <li></li>
-    </ul>
+    <% @bookings.each do |booking| %>
+      <p><%= booking.bag.brand %>, <%= booking.total_price %></p>
+    <% end %>
   </div>
 </div>
