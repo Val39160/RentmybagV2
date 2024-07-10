@@ -1,19 +1,15 @@
+<div class="bag-details">
+
 <h1><%= @bag.brand %></h1>
 
-<p><strong>Etat :</strong> <%= @bag.state %></p>
 <p><strong>Volume :</strong> <%= @bag.capacity %> litres</p>
 <p><strong>Poids :</strong> <%= @bag.weight %> kg</p>
 <p><strong>Usage :</strong> <%= @bag.usage %></p>
 <p><strong>Adresse :</strong> <%= @bag.address %></p>
+<p><strong>Etat :</strong> <%= @bag.state %></p>
 <p><strong>Tarif journalier : </strong><%= @bag.daily_price %>€ per day</p>
 
-<%= link_to 'Back to Bags', bags_path, class: 'btn btn-secondary' %>
+<%= link_to 'Retour', bags_path, class: 'btn btn-secondary' %>
+<%= link_to 'Réserver ce sac!', new_bag_booking_path(@bag), class: 'btn btn-success' %>
 
-<% if user_signed_in? && @bag.user == current_user %>
-  <%= link_to 'Edit Bag', edit_bag_path(@bag), class: 'btn btn-primary' %>
-  <%= link_to 'Delete Bag', bag_path(@bag), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
-<% end %>
-
-<% if user_signed_in? && @bag.availability %>
-  <%= link_to 'Book This Bag', new_bag_booking_path(@bag), class: 'btn btn-success' %>
-<% end %>
+</div>
