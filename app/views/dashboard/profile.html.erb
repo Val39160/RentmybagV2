@@ -1,24 +1,25 @@
-
-<div>
+<div id="container">
   <h1>Voici ton Tableau de bord Rent my  bag</h1>
-  <div>
-    <h2>Mon profil</h2>
-    <ul>
-      <li>Name: <%= current_user.name %></li>
-      <li>Email: <%= current_user.email %></li>
-      <li>Phone number: <%= current_user.phone_number %></li>
-      <li>Address: <%= current_user.address %></li>
-    </ul>
+  <div class="first-container">
+    <div class="card-profile">
+      <h2>Mon profil</h2>
+      <ul>
+        <li>Name: <%= current_user.name %></li>
+        <li>Email: <%= current_user.email %></li>
+        <li>Phone number: <%= current_user.phone_number %></li>
+        <li>Address: <%= current_user.address %></li>
+      </ul>
+    </div>
+    <div class="card-bags">
+      <h2>Mes sacs</h2>
+      <ul>
+        <% @bags.each do |bag| %>
+          <li><%= bag.brand %>, <%= bag.capacity %> <%= bag.daily_price %></li>
+        <% end %>
+      </ul>
+    </div>
   </div>
-  <div>
-    <h2>Mes sacs</h2>
-    <ul>
-      <% @bags.each do |bag| %>
-        <li><%= bag.brand %>, <%= bag.capacity %> <%= bag.daily_price %></li>
-     <% end %>
-    </ul>
-  </div>
-  <div>
+  <div id="second-container" class="card-reservations">
     <h2>Mes réservations</h2>
     <ul>
       <li></li>
