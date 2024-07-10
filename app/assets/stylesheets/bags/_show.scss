@@ -1,0 +1,73 @@
+/* Bag details for show page */
+.bag-details {
+  background-color: #ffffff;
+  border: 1px solid #ebebeb;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 2rem auto;
+  max-width: 600px;
+  padding: 2rem;
+  text-align: left;
+
+  h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #484848;
+    text-align: center;
+    margin-top: 2rem;
+  }
+
+  p {
+    margin-bottom: 1rem;
+    color: #717171;
+    font-size: 1rem;
+  }
+
+  .btn-primary,
+  .btn-secondary,
+  .btn-danger,
+  .btn-success {
+    border: none;
+    border-radius: 4px;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1rem;
+    margin: 1rem;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    text-decoration: none;
+
+    &.btn-primary {
+      background-color: #FF5A5F;
+
+      &:hover {
+        background-color: #e64950;
+      }
+    }
+
+    &.btn-secondary {
+      background-color: #6c757d;
+
+      &:hover {
+        background-color: #5a6268;
+      }
+    }
+
+    &.btn-danger {
+      background-color: #dc3545;
+
+      &:hover {
+        background-color: #c82333;
+      }
+    }
+
+    &.btn-success {
+      background-color: #28a745;
+
+      &:hover {
+        background-color: #218838;
+      }
+    }
+  }
+}
