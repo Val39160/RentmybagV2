@@ -8,18 +8,25 @@ require "open-uri"
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+Bag.destroy_all
 User.destroy_all
 
 user1 = User.create!(
+  name: 'Asya',
   email: 'user1@exemple.com',
   password: 'password1',
-  password_confirmation: 'password1'
+  password_confirmation: 'password1',
+  phone_number: '06 78 90 12 34',
+  address: '37 avenue Trudaine, 75009 Paris, France'
 )
 
 user2 = User.create!(
+  name: 'Nicolas',
   email: 'user2@exemple.com',
   password: 'password2',
-  password_confirmation: 'password2'
+  password_confirmation: 'password2',
+  phone_number: '07 78 90 12 34',
+  address: '42 rue de la Santé, 75014 Paris, France'
 )
 
 Bag.create!(
