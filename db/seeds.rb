@@ -34,7 +34,7 @@ Bag.create!(
   state: 'Neuf',
   capacity: 40,
   usage: 'Business',
-  address: 'Paris, France',
+  address: 'Paris',
   weight: 3.5,
   daily_price: 10.0,
   user: user1
@@ -45,7 +45,7 @@ Bag.create!(
   state: 'Bon',
   capacity: 50,
   usage: 'Loisirs',
-  address: 'Paris, France',
+  address: 'Paris',
   weight: 4.0,
   daily_price: 10.0,
   user: user1
@@ -56,7 +56,7 @@ Bag.create!(
   state: 'Excellent',
   capacity: 60,
   usage: 'Aventure',
-  address: 'Vannes, France',
+  address: 'Vannes',
   weight: 4.5,
   daily_price: 10.0,
   user: user2
@@ -67,7 +67,7 @@ Bag.create!(
   state: 'Normal',
   capacity: 55,
   usage: 'Business',
-  address: 'Vannes, France',
+  address: 'Vannes',
   weight: 5.0,
   daily_price: 12.0,
   user: user2
@@ -78,7 +78,7 @@ Bag.create!(
   state: 'Excellent',
   capacity: 70,
   usage: 'Loisirs',
-  address: 'Paris, France',
+  address: 'Paris',
   weight: 6.0,
   daily_price: 18.0,
   user: user1
@@ -89,7 +89,7 @@ Bag.create!(
   state: 'Neuf',
   capacity: 80,
   usage: 'Aventure',
-  address: 'Vannes, France',
+  address: 'Vannes',
   weight: 6.0,
   daily_price: 25.0,
   user: user2

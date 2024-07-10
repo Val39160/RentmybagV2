@@ -4,7 +4,16 @@ class BagsController < ApplicationController
   end
 
   def index
-    @bags = Bag.all
+    if params[:usage].present? && params[:address].present?
+      @bags = Bag.where("address ILIKE :address", address: "%#{params[:address]}%")
+      .where("usage ILIKE :usage", usage: "%#{params[:usage]}%")
+    elsif params[:usage].present? && params[:address].blank?
+      @bags = Bag.where("usage ILIKE :usage", usage: "%#{params[:usage]}%")
+    elsif params[:address].present?
+      @bags = Bag.where("address ILIKE :address", address: "%#{params[:address]}%")
+    else
+      @bags = Bag.all
+    end
   end
 
   def show

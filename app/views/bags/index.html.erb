@@ -4,17 +4,14 @@
   <div class="bags">
     <% @bags.each do |bag| %>
       <div class="bag">
-        <div class="bag-image" style="background-image: url('/path/to/your/image.jpg');"></div>
-        <h2><%= link_to bag.brand, bag_path(bag), class: 'btn-primary' %></h2>
+        <h2><%= link_to bag.brand, bag_path(bag) %></h2>
         <p><strong>Volume :</strong> <%= bag.capacity %> litres</p>
         <p><strong>Poids :</strong> <%= bag.weight %> kg</p>
         <p><strong>Usage :</strong> <%= bag.usage %></p>
-        <p><strong>Adresse :</strong> <%= bag.address %></p>
+        <p><strong>Ville :</strong> <%= bag.address %></p>
       </div>
     <% end %>
   </div>
 <% else %>
-  <p>Aucun sac disponible! revenez plus tard!.</p>
+  <p>Aucun sac disponible! Revenez plus tard!</p>
 <% end %>
-
-<%= link_to 'New Bag', new_bag_path, class: 'btn btn-primary' if user_signed_in? %>

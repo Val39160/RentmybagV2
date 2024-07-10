@@ -1,20 +1,10 @@
-<nav class="navbar">
-  <div class="navbar-container">
-    <h2 class="navbar-brand">
-      <%= link_to 'RentMyBag', root_path %>
-    </h2>
-    <%# <div class="navbar-search"> %>
-      <%# <% form_with url: search_path, method: :get, local: true do %>
-        <%# <input type="text" name="location" placeholder="Enter city, country" class="navbar-input">
-        <select name="usage" class="navbar-dropdown">
-          <option value="adventure">Aventure</option>
-          <option value="business">Business</option>
-          <option value="leisure">Loisir</option>
-        </select>
-        <button type="submit" class="navbar-button">Search</button> %>
-      <%# <% end %>
-    <%# </div> %>
-    <div class="profile-icon">
-    </div>
-  </div>
-</nav>
+
+  <nav class="navbar">
+    <a href="/" class="navbar-brand">RentMyBag</a>
+    <%= form_with url: bags_path, method: :get, local: true, class: 'navbar-search' do %>
+      <%= text_field_tag :address, params[:address], placeholder: 'Votre ville', class: 'navbar-search-input' %>
+      <%= select_tag :usage, options_for_select(['Pour quel voyage ?', 'loisirs', 'business', 'aventure'], params[:usage]), class: 'navbar-search-select' %>
+      <%= submit_tag 'Je trouve mon sac', class: 'navbar-search-button' %>
+    <% end %>
+    <div class="profile-icon"></div>
+  </nav>
