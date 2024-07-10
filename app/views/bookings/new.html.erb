@@ -1,1 +1,12 @@
 <h1>Créer une réservation</h1>
+<div class="container">
+  <div class="card-body">
+    <%= simple_form_for([@bag, @booking]) do |f| %>
+      <%= f.input :start_date, as: :string, label: 'Date de départ', input_html: { type: 'date' } %>
+      <%= f.input :end_date, as: :string, label: 'Date de fin', input_html: { type: 'date' } %>
+      <%= f.input :total_price, as: :decimal, label: 'Prix total'%>
+      <%= f.input :status, input_html: { readonly: true, value: 'En attente de validation' } %>
+      <%= f.submit 'Créer la réservation' %>
+    <% end %>
+  </div>
+</div>

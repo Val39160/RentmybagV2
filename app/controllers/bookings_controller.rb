@@ -1,17 +1,20 @@
 class BookingsController < ApplicationController
   def new
     @booking = Booking.new
+    @bag = Bag.find(params[:bag_id])
   end
 
   def create
+
+    @bag = Bag.find(params[:bag_id])
     @booking = Booking.new(booking_params)
     @booking.user = current_user
-    @bag = Bag.find(params[:bag_id])
     @booking.bag = @bag
-    if @booking.save!
-      redirect_to dashboard_path
+    #raise
+    if @booking.save
+      redirect_to dashboard_path, notice: 'Réservation créée avec succès.'
     else
-      render :new, status: :unprocessable_entity
+      render :new, status: :unprocessable_entity, notice: 'Échec de la création de la réservation.'
     end
   end
 
@@ -26,7 +29,7 @@ class BookingsController < ApplicationController
   end
 
   private
-  
+
   def booking_params
     params.require(:booking).permit(:bag_id, :start_date, :end_date, :total_price, :status)
   end
