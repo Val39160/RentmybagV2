@@ -26,7 +26,7 @@ user2 = User.create!(
   password: 'password2',
   password_confirmation: 'password2',
   phone_number: '07 78 90 12 34',
-  address: '42 rue de la Santé, 75014 Paris, France'
+  address: '13 place de la Poissonnerie, 56000 Vannes, France'
 )
 
 Bag.create!(
@@ -77,7 +77,7 @@ Bag.create!(
   brand: 'Victorinox',
   state: 'Excellent',
   capacity: 70,
-  usage: 'Leisure',
+  usage: 'Loisirs',
   address: 'Paris, France',
   weight: 6.0,
   daily_price: 18.0,
