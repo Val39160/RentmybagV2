@@ -24,6 +24,6 @@ class BagsController < ApplicationController
   private
 
   def bag_params
-    params.require(:bag).permit(:brand, :state, :capacity, :usage, :address, :availability, :daily_price)
+    params.require(:bag).permit(:brand, :state, :capacity, :usage, :address, :availability, :weight, :daily_price)
   end
 end
