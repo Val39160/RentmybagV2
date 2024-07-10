@@ -16,7 +16,7 @@ user1 = User.create!(
   email: 'user1@exemple.com',
   password: 'password1',
   password_confirmation: 'password1',
-  phone_number: '06 78 90 12 34',
+  phone_number: '06 79 90 12 34',
   address: '37 avenue Trudaine, 75009 Paris, France'
 )
 
