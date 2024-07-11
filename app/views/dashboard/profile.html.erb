@@ -25,7 +25,7 @@
       <h2><i class="fa-solid fa-calendar-check"></i>  Mes réservations</h2>
       <ul>
         <% @bookings.each do |booking| %>
-          <li><p><%= booking.bag.brand %></p> <strong><%= booking.total_price %>€</strong></li>
+          <li><p><%= booking.bag.brand %></p> <strong><%= booking.total_price %>€</strong> <%= booking.status %></li>
           <p class="booking-date"><%= booking.start_date %> - <%= booking.end_date %></p>
         <% end %>
       </ul>
@@ -35,7 +35,7 @@
       <h2><i class="fa-solid fa-bag-shopping"></i>  Mes sacs demandes</h2>
       <ol>
         <% @owner_bookings.each do |booking|%>
-          <li><p><%= booking.bag.brand %></p> <strong><%= booking.total_price %>€</strong></li>
+          <li><p><%= booking.bag.brand %></p> <strong><%= booking.total_price %> €</strong></li>
           <p class="booking-date"><%= booking.start_date %> - <%= booking.end_date %></p>
         <% end %>
       </ol>
