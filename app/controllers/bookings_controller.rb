@@ -1,4 +1,6 @@
 class BookingsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create]
+
   def new
     @booking = Booking.new
     @bag = Bag.find(params[:bag_id])
