@@ -5,5 +5,6 @@
       <%= select_tag :usage, options_for_select(['Pour quel voyage ?', 'loisirs', 'business', 'aventure'], params[:usage]), class: 'navbar-search-select' %>
       <%= submit_tag 'Je trouve mon sac', class: 'navbar-search-button' %>
     <% end %>
+    <%= link_to 'Dashboard', dashboard_path %>
     <div class="profile-icon"></div>
   </nav>
