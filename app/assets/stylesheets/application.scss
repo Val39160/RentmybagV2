@@ -14,7 +14,71 @@
 @import "bags/index";
 @import "bags/show";
 @import "dashboard/profile";
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+
+.search-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px auto;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-search {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.navbar-search-input,
+.navbar-search-select,
+.navbar-search-button {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.navbar-search-input,
+.navbar-search-select {
+  flex: 1;
+  min-width: 200px;
+}
+
+.navbar-search-button {
+  background-color: #ff5a5f;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.navbar-search-button:hover {
+  background-color: #e14a50;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .navbar {
   background-color: #fff;

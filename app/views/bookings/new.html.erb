@@ -1,11 +1,11 @@
 <h1>Créer une réservation</h1>
 <div class="container">
-  <div class="card-body">
+  <div class="card-body" data-controller="total-price" data-total-price-priceperday-value="<%= @bag.daily_price %>">
     <%= simple_form_for([@bag, @booking]) do |f| %>
-      <%= f.input :start_date, as: :string, label: 'Date de départ', input_html: { type: 'date' } %>
-      <%= f.input :end_date, as: :string, label: 'Date de fin', input_html: { type: 'date' } %>
+      <%= f.input :start_date, as: :string, label: 'Date de départ', input_html: { type: 'date', 'data-total-price-target' => 'startDate' } %>
+      <%= f.input :end_date, as: :string, label: 'Date de fin', input_html: { type: 'date', 'data-total-price-target' => 'endDate', 'data-action' => 'change->total-price#calculPrice' } %>
       <div class="input-container">
-        <%= f.input :total_price, as: :decimal , label: 'Prix total', placeholder: "Montant total"%>
+        <p data-total-price-target = "totalPrice"> </p>
         <span class="currency-symbol">€</span>
       </div>
       <%= f.submit 'Faire une demande de réservation' %>

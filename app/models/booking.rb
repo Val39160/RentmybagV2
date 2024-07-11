@@ -8,7 +8,7 @@ class Booking < ApplicationRecord
   validates :status, presence: true
   validates :user, presence: true
   validates :bag, presence: true
-  validates :status, inclusion: { in: ['acceptée', 'en cours', 'declinée'] }
+  validates :status, inclusion: { in: ['acceptée', 'En cours', 'declinée'] }
 end
 
 # rajouter les validations
