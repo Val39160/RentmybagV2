@@ -4,7 +4,10 @@
     <%= simple_form_for([@bag, @booking]) do |f| %>
       <%= f.input :start_date, as: :string, label: 'Date de départ', input_html: { type: 'date' } %>
       <%= f.input :end_date, as: :string, label: 'Date de fin', input_html: { type: 'date' } %>
-      <%= f.input :total_price, as: :decimal, label: 'Prix total'%>
+      <div class="input-container">
+        <%= f.input :total_price, as: :decimal , label: 'Prix total', placeholder: "Montant total"%>
+        <span class="currency-symbol">€</span>
+      </div>
       <%= f.submit 'Faire une demande de réservation' %>
     <% end %>
   </div>
