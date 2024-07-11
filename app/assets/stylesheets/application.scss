@@ -8,6 +8,7 @@
 @import "font-awesome";
 
 // Your CSS partials
+@import "bookings/new";
 @import "components/index";
 @import "pages/index";
 @import "bags/index";
@@ -161,7 +162,16 @@ ul{
 	color: #24262b;
 	background-color: #ffffff;
 }
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 
+/* Le contenu principal prend tout l'espace disponible */
+.content {
+  flex: 1;
+}
 /*responsive*/
 @media(max-width: 767px){
   .footer-col{

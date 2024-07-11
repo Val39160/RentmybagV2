@@ -1,0 +1,25 @@
+.input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.input-container input {
+  width: 100%;
+  padding: 10px;
+  padding-right: 30px; /* Ajouter de l'espace pour le symbole */
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Style pour le symbole de la devise */
+.currency-symbol {
+  margin-left: 15px;
+  right: 10px; /* Ajustez en fonction de vos besoins */
+  font-size: 16px;
+  color: #333;
+  pointer-events: none; /* Le symbole ne sera pas cliquable */
+}
