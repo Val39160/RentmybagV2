@@ -1,1 +1,20 @@
-<h1>Create a new bag</h1>
+<h1>Mettre mon sac en location</h1>
+<div class="container">
+  <div class="card-body">
+    <%= simple_form_for @bag, html: { multipart: true } do |f| %>
+      <div class="form-inputs">
+        <%= f.input :brand, label: "Marque" %>
+        <%= f.input :state, label: "Etat", collection: ['Neuf', 'Bon état', 'Usé'] %>
+        <%= f.input :capacity, label: "Volume (litres)" %>
+        <%= f.input :usage, label: "Usage", collection: ['Loisirs', 'Business', 'Aventure'], prompt: "Select Usage" %>
+        <%= f.input :address, label: "Votre ville" %>
+        <%= f.input :daily_price, label: "Tarif journalier (€)" %>
+        <%= f.input :weight, label: "Poids (kg)" %>
+        <%= f.input :photo, as: :file, label: "Photo" %>
+      </div>
+      <%= f.submit "Mettre mon sac en location", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
+
+<%= link_to 'Retour', bags_path, class: 'btn btn-secondary' %>
