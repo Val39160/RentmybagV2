@@ -1,20 +1,41 @@
+  #show-section {
+    background-color: #f9f2e0;
+    height: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+  }
+
+
 /* Bag details for show page */
+
 .bag-details {
   background-color: #ffffff;
   border: 1px solid #ebebeb;
   border-radius: 12px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   margin: 2rem auto;
+  margin-bottom: 15%;
   max-width: 600px;
   padding: 2rem;
   text-align: left;
+}
+.show-text-details {
+  margin-top: 50px;
+}
+.bag-card-image-container {
+  margin-left: 30px;
+}
 
-  h1 {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #484848;
+.cta-show {
+  margin-left: 90px;
+}
+
+  #show-h1 {
+    font-size: 30px;
+    color: #302e2e;
     text-align: center;
-    margin-top: 2rem;
+    margin-top: 10px;
   }
 
   p {
@@ -34,7 +55,7 @@
     display: inline-block;
     font-size: 1rem;
     margin: 1rem;
-    padding: 0.5rem 1rem;
+    padding: 1rem 1.5rem;
     text-align: center;
     text-decoration: none;
 
@@ -63,11 +84,10 @@
     }
 
     &.btn-success {
-      background-color: #28a745;
+      background-color: #ffb726;
 
       &:hover {
-        background-color: #218838;
+        background-color: #ffaa00;
       }
     }
   }
-}
