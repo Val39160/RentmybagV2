@@ -1,8 +1,8 @@
 class BagsController < ApplicationController
-    before_action :authenticate_user!, only: [:new, :create]
+  before_action :authenticate_user!, only: [:new, :create]
 
   def new
-    @bags = Bag.new
+    @bag = Bag.new
   end
 
   def index
@@ -22,13 +22,23 @@ class BagsController < ApplicationController
     @bag = Bag.find(params[:id])
   end
 
+  # def create
+  #   @bag = Bag.new(bag_params)
+  #   @bag.user_id = current_user.id
+  #   if @bag.save
+  #     redirect_to root_path
+  #   else
+  #     render 'new', notice: "Impossible de créer un nouveau sac"
+  #   end
+  # end
+
   def create
-    @bag = Bag.new(bag_params)
-    @bag.user_id = current_user.id
+    @bag = current_user.bags.build(bag_params)
     if @bag.save
-      redirect_to root_path
+      redirect_to root_path, notice: 'Bag was successfully created.'
     else
-      render 'new', notice: "Impossible de créer un nouveau sac"
+      flash[:notice] = "Impossible de créer un nouveau sac"
+      render 'new'
     end
   end
 
