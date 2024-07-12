@@ -21,8 +21,10 @@ class BagsController < ApplicationController
   def index
     if params[:address].present?
       @bags = Bag.where("address ILIKE ?", "%#{params[:address]}%")
+      redirect_to "#{bags_path}#bags-section"
       if params[:usage].present?
         @bags = @bags.where("usage ILIKE ?", "%#{params[:usage]}%")
+        redirect_to "#{bags_path}#bags-section"
       end
     else
       @bags = Bag.none
