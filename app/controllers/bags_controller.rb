@@ -5,33 +5,30 @@ class BagsController < ApplicationController
     @bag = Bag.new
   end
 
-  # def index
-  #   if params[:usage].present? && params[:address].present?
-  #     @bags = Bag.where("address ILIKE :address", address: "%#{params[:address]}%")
-  #     .where("usage ILIKE :usage", usage: "%#{params[:usage]}%")
-  #   elsif params[:usage].present? && params[:address].blank?
-  #     @bags = Bag.where("usage ILIKE :usage", usage: "%#{params[:usage]}%")
-  #   elsif params[:address].present?
-  #     @bags = Bag.where("address ILIKE :address", address: "%#{params[:address]}%")
-  #   else
-  #     @bags = Bag.all
-  #   end
-  # end
-
   def index
-    if params[:address].present?
-      @bags = Bag.where("address ILIKE ?", "%#{params[:address]}%")
-      redirect_to "#{bags_path}#bags-section"
-      if params[:usage].present?
-        @bags = @bags.where("usage ILIKE ?", "%#{params[:usage]}%")
-        redirect_to "#{bags_path}#bags-section"
-      end
+    if params[:usage].present? && params[:address].present?
+      @bags = Bag.where("address ILIKE :address", address: "%#{params[:address]}%")
+      .where("usage ILIKE :usage", usage: "%#{params[:usage]}%")
+    elsif params[:address].present?
+      @bags = Bag.where("address ILIKE :address", address: "%#{params[:address]}%")
     else
-      @bags = Bag.none
-      flash.now[:alert] = "Please enter an address to search."
+      @bags = Bag.all
     end
   end
 
+  # def index
+  #   if params[:address].present?
+  #     @bags = Bag.where("address ILIKE ?", "%#{params[:address]}%")
+  #     redirect_to "#{bags_path}#bags-section"
+  #     if params[:usage].present?
+  #       @bags = @bags.where("usage ILIKE ?", "%#{params[:usage]}%")
+  #       redirect_to "#{bags_path}#bags-section"
+  #     end
+  #   else
+  #     @bags = Bag.none
+  #     flash.now[:alert] = "Please enter an address to search."
+  #   end
+  # end
 
   def show
     @bag = Bag.find(params[:id])
