@@ -5,32 +5,35 @@ class BagsController < ApplicationController
     @bag = Bag.new
   end
 
+  # def index
+  #   if params[:usage].present? && params[:address].present?
+  #     @bags = Bag.where("address ILIKE :address", address: "%#{params[:address]}%")
+  #     .where("usage ILIKE :usage", usage: "%#{params[:usage]}%")
+  #   elsif params[:usage].present? && params[:address].blank?
+  #     @bags = Bag.where("usage ILIKE :usage", usage: "%#{params[:usage]}%")
+  #   elsif params[:address].present?
+  #     @bags = Bag.where("address ILIKE :address", address: "%#{params[:address]}%")
+  #   else
+  #     @bags = Bag.all
+  #   end
+  # end
+
   def index
-    if params[:usage].present? && params[:address].present?
-      @bags = Bag.where("address ILIKE :address", address: "%#{params[:address]}%")
-      .where("usage ILIKE :usage", usage: "%#{params[:usage]}%")
-    elsif params[:usage].present? && params[:address].blank?
-      @bags = Bag.where("usage ILIKE :usage", usage: "%#{params[:usage]}%")
-    elsif params[:address].present?
-      @bags = Bag.where("address ILIKE :address", address: "%#{params[:address]}%")
+    if params[:address].present?
+      @bags = Bag.where("address ILIKE ?", "%#{params[:address]}%")
+      if params[:usage].present?
+        @bags = @bags.where("usage ILIKE ?", "%#{params[:usage]}%")
+      end
     else
-      @bags = Bag.all
+      @bags = Bag.none
+      flash.now[:alert] = "Please enter an address to search."
     end
   end
+
 
   def show
     @bag = Bag.find(params[:id])
   end
-
-  # def create
-  #   @bag = Bag.new(bag_params)
-  #   @bag.user_id = current_user.id
-  #   if @bag.save
-  #     redirect_to root_path
-  #   else
-  #     render 'new', notice: "Impossible de créer un nouveau sac"
-  #   end
-  # end
 
   def create
     @bag = current_user.bags.build(bag_params)
