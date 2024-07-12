@@ -15,10 +15,10 @@
       <h2>Mes sacs</h2>
         <% @bags.each do |bag| %>
           <p>
-          <%= link_to bag.brand, bag_path(bag), class: 'btn btn-primary' %>
+          <%= link_to bag.brand, bag_path(bag), class: 'btn-primary' %>
           </p>
         <% end %>
-      <%= link_to 'créer un nouveau sac', new_bag_path, class: 'btn btn-secondary' %>
+      <%= link_to 'créer un nouveau sac', new_bag_path, class: 'btn-secondary' %>
     </div>
   </div>
   <div class="second-container">
