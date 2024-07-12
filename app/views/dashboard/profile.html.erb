@@ -18,6 +18,7 @@
           <%= link_to bag.brand, bag_path(bag), class: 'btn btn-primary' %>
           </p>
         <% end %>
+      <%= link_to 'créer un nouveau sac', new_bag_path, class: 'btn btn-secondary' %>
     </div>
   </div>
   <div class="second-container">
@@ -35,7 +36,16 @@
       <h2><i class="fa-solid fa-bag-shopping"></i>  Mes sacs demandes</h2>
       <ol>
         <% @owner_bookings.each do |booking|%>
-          <li><p><%= booking.bag.brand %></p> <strong><%= booking.total_price %> €</strong></li>
+          <li>
+            <p><%= booking.bag.brand %></p> <strong><%= booking.total_price %>€</strong>
+            <div data-controller="update-status" >
+              <%= form_with model: [booking.bag, booking], method: :patch,  data: { turbo: false } do |form| %>
+                <%= form.hidden_field :status %>
+                <%= form.submit "Acceptée", name: "commit", value: "acceptée", data: { turbo: "submit-end->updateStatus#acceptée" }, class: 'accept' %>
+                <%= form.submit "Declinée", name: "commit", value: "declinée", data: { turbo: "submit-end->updateStatus#declinée" }, class: 'deny' %>
+              <% end %>
+            </div>
+          </li>
           <p class="booking-date"><%= booking.start_date %> - <%= booking.end_date %></p>
         <% end %>
       </ol>
