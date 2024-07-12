@@ -7,7 +7,7 @@
 <p><strong>Usage :</strong> <%= @bag.usage %></p>
 <p><strong>Ville :</strong> <%= @bag.address %></p>
 <p><strong>Etat :</strong> <%= @bag.state %></p>
-<p><strong>Tarif journalier : </strong><%= @bag.daily_price %>€ per day</p>
+<p><strong>Tarif journalier : </strong><%= @bag.daily_price %>€</p>
 
 <%= link_to 'Retour', bags_path, class: 'btn btn-secondary' %>
 <%= link_to 'Réserver ce sac!', new_bag_booking_path(@bag), class: 'btn btn-success' %>
