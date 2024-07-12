@@ -1,7 +1,9 @@
+  <script src="app/javascript/custom/scroll-down.js"></script>
+
   <nav class="navbar">
     <a href="/" class="navbar-brand">RentMyBag</a>
     <div class="search-bar">
-      <%= form_with url: bags_path, method: :get, local: true, class: 'navbar-search' do %>
+      <%= form_with url: bags_path, method: :get, local: true, class: 'navbar-search', id: 'search-form' do %>
         <%= text_field_tag :address, params[:address], placeholder: 'Votre ville', class: 'navbar-search-input' %>
         <%= select_tag :usage, options_for_select(['Loisirs', 'Business', 'Aventure'], params[:usage]), prompt: 'Pour quel voyage ?', class: 'navbar-search-select' %>
         <%= submit_tag 'Je trouve mon sac', class: 'navbar-search-button' %>
@@ -16,5 +18,7 @@
         <%= link_to 'Se connecter', new_user_session_path, class: 'link' %>
       <%end%>
     </div>
-    <div class="profile-icon"></div>
+    <div class="profile-icon">
+      <%= image_tag 'foto-sushi-6anudmpILw4-unsplash.jpg', alt: 'photo de profil', class: 'image-profil' %>
+    </div>
   </nav>
