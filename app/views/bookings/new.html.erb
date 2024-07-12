@@ -7,7 +7,7 @@
       <%= f.input :end_date, as: :string, label: 'Date de fin', input_html: { type: 'date', 'data-total-price-target' => 'endDate', 'data-action' => 'change->total-price#calculPrice' } %>
       <p>Prix total :</p>
       <div class="input-container">
-        <p data-total-price-target = "totalPrice">0</p>
+        <p id = "total-price" data-total-price-target = "totalPrice">0</p>
         <span class="currency-symbol">€</span>
       </div>
       <div id = "submit-container">
