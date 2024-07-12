@@ -8,8 +8,10 @@ require "open-uri"
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+Booking.destroy_all
 Bag.destroy_all
 User.destroy_all
+
 
 user1 = User.create!(
   name: 'Asya',
@@ -37,7 +39,8 @@ Bag.create!(
   address: 'Paris',
   weight: 3.5,
   daily_price: 10.0,
-  user: user1
+  user: user1,
+  image: 'https://images.unsplash.com/photo-1718702662411-11d9672eb179?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
 )
 
 Bag.create!(
@@ -48,7 +51,8 @@ Bag.create!(
   address: 'Paris',
   weight: 4.0,
   daily_price: 10.0,
-  user: user1
+  user: user1,
+  image: 'https://images.unsplash.com/photo-1708403120467-1715bb6840df?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
 )
 
 Bag.create!(
@@ -59,7 +63,8 @@ Bag.create!(
   address: 'Vannes',
   weight: 4.5,
   daily_price: 10.0,
-  user: user2
+  user: user2,
+  image: 'https://plus.unsplash.com/premium_photo-1684407616508-b9e82c8bc8a0?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
 )
 
 Bag.create!(
@@ -70,7 +75,8 @@ Bag.create!(
   address: 'Vannes',
   weight: 5.0,
   daily_price: 12.0,
-  user: user2
+  user: user2,
+  image: 'https://images.unsplash.com/photo-1564209906116-fb6887675069?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
 )
 
 Bag.create!(
@@ -81,7 +87,8 @@ Bag.create!(
   address: 'Paris',
   weight: 6.0,
   daily_price: 18.0,
-  user: user1
+  user: user1,
+  image: 'https://images.unsplash.com/photo-1593032517656-8003cc4c8373?q=80&w=1926&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
 )
 
 Bag.create!(
@@ -92,7 +99,8 @@ Bag.create!(
   address: 'Vannes',
   weight: 6.0,
   daily_price: 25.0,
-  user: user2
+  user: user2,
+  image: 'https://images.unsplash.com/photo-1718702662411-11d9672eb179?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
 )
 
 puts "Seed data has been successfully created!"

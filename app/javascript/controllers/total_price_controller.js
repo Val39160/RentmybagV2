@@ -30,6 +30,9 @@ export default class extends Controller {
     } else {
       // Gérer le cas où les dates ne sont pas valides ou dans un ordre incorrect
       console.error("Invalid dates or order")
+
+      this.totalPriceTarget.textContent = 0
+
     }
   }
 }

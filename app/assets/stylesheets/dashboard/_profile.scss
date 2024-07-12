@@ -121,3 +121,30 @@ ul {
 .btn-primary:hover {
   background-color: #FFAA00;
 }
+
+ .accept {
+  background-color: #63D46F;
+  border-color: #63D46F;
+  border-radius: 4px;
+  color: #ffffff;
+  font-size: 12px;
+  padding: 4px;
+}
+
+ .accept:hover {
+  background-color: #6CE979;
+}
+
+.deny {
+  color: #EC5252;
+  border-color: #EC5252;
+  border-radius: 4px;
+  padding-right: 7px;
+  font-size: 12px;
+  padding: 4px;
+}
+
+.deny:hover {
+  background-color: #EC5252;
+  color: white;
+}
