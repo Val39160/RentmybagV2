@@ -9,10 +9,13 @@ class BagsController < ApplicationController
     if params[:usage].present? && params[:address].present?
       @bags = Bag.where("address ILIKE :address", address: "%#{params[:address]}%")
       .where("usage ILIKE :usage", usage: "%#{params[:usage]}%")
+      redirect_to "#{bags_path}#destination-resultat"
     elsif params[:usage].present? && params[:address].blank?
       @bags = Bag.where("usage ILIKE :usage", usage: "%#{params[:usage]}%")
+      redirect_to "#{bags_path}#destination-resultat"
     elsif params[:address].present?
       @bags = Bag.where("address ILIKE :address", address: "%#{params[:address]}%")
+      redirect_to "#{bags_path}#destination-resultat"
     else
       @bags = Bag.all
     end
