@@ -6,20 +6,48 @@
 }
 
 .input-container {
-  width: 100%;
-  padding: 10px;
-  padding-right: 30px; /* Ajouter de l'espace pour le symbole */
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
+  width: 15%;
+    padding: 5px;
+    padding-right: 30px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 30px;
 }
+
 
 /* Style pour le symbole de la devise */
 .currency-symbol {
-  margin-left: 15px;
+  margin-left: auto;
   right: 10px; /* Ajustez en fonction de vos besoins */
   font-size: 16px;
+  margin-bottom: auto;
   color: #333;
   pointer-events: none; /* Le symbole ne sera pas cliquable */
 }
+
+.reservation-container {
+  height: 100%;
+  padding-top: 50px;
+  padding-bottom: 15%;
+  background-color: #f9f2e0
+}
+
+.card-body {
+  background-color: #ffffff;
+  border: 1px solid #ebebeb;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 2rem auto;
+  margin-bottom: 15%;
+  margin-top: 80px;
+  max-width: 600px;
+  padding: 2rem;
+  text-align: left;
+
+}
+
+  #submit-container {
+    margin-left: 80px;
+  }

@@ -11,13 +11,15 @@ h1 {
 .bags {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
-  margin: 2rem auto;
-  max-width: 1200px;
+  justify-content: space-evenly;
+  margin: 1rem auto;
+  max-width: 1600px;
+
 }
 
 /* Bag card */
 .bag {
+  justify-content: space-evenly;
   background-color: #ffffff;
   border: 1px solid #ebebeb;
   border-radius: 12px;
@@ -28,6 +30,7 @@ h1 {
   text-align: left;
   position: relative;
   transition: transform 0.2s;
+  height: 750px;
 }
 
 .bag:hover {
@@ -52,7 +55,7 @@ h1 {
 .bag p {
   padding: 0.5rem 1rem;
   color: #717171;
-  font-size: 0.875rem;
+
 }
 
 .bag .btn-primary {
@@ -74,19 +77,27 @@ h1 {
 }
 
 .banner {
+  justify-content: start;
   background-size: cover;
   background-position: center;
-  padding: 150px 0;
-  height: 550px;
+  padding: 1px 0;
+  height: 650px;
+
+
 }
 
-.banner h1 {
+#banner-h1 {
   margin: 0;
   color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 32px;
+  font-size: 50px;
   font-weight: bold;
-  text-align: left;
+  text-align: start;
+}
+
+.banner-h1-container {
+  margin-left: 0;
+
 }
 
 .banner p {
@@ -95,3 +106,68 @@ h1 {
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
+
+.bag-card-image-container {
+  height: 300px;
+  width: 325px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 5px;
+  align-items: center;
+}
+#card-general-h1{
+  text-align: center;
+  font-size: 30px;
+  font-weight: 40px;
+  color: #242323;
+  padding-bottom: 8px;
+}
+
+#bag-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+  margin: 15px;
+  align-items: center;
+  margin-left: 60px
+}
+
+  #bag-card-text {
+    margin-top: 110px;
+    padding: 15px;
+    text-align: start;
+    margin-left: 20px;
+  }
+
+  #bag-card-title-container {
+    display: flex;
+    justify-content: center;
+    background-color: #FFB726;
+    margin-top: 0px;
+    margin-left: 130px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+  }
+
+  .link-to-title-bag-card {
+    text-decoration: none;
+    color: white;
+
+  }
+
+  .bags-section {
+    background-color: #FFFCF5 ;
+    height: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+  }
+
+  #bag-section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: #161515;
+    padding-bottom: 40px;
+  }

@@ -1,23 +1,39 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1670888827505-907553eb732b?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);">
-  <div class="container">
-    <h1>Voyagez mieux<br>Voyagez léger !</h1>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1670888827505-907553eb732b?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);">
+  <div class="banner-h1-container">
+    <h1 id ="banner-h1">Voyagez mieux<br>Voyagez léger !</h1>
   </div>
 </div>
 
-<h1>Sacs disponibles</h1>
+<div class = "bags-section">
+    <h1 id="bag-section-title">Sacs disponibles</h1>
 
-<% if @bags.any? %>
-  <div class="bags">
-    <% @bags.each do |bag| %>
-      <div class="bag">
-        <h2><%= link_to bag.brand, bag_path(bag) %></h2>
-        <p><strong>Volume :</strong> <%= bag.capacity %> litres</p>
-        <p><strong>Poids :</strong> <%= bag.weight %> kg</p>
-        <p><strong>Usage :</strong> <%= bag.usage %></p>
-        <p><strong>Ville :</strong> <%= bag.address %></p>
+    <% if @bags.any? %>
+      <div class="bags">
+        <% @bags.each do |bag| %>
+          <div class="bag">
+
+            <div id = "card-general-h1-container">
+              <h1 id = "card-general-h1"><%= bag.brand %></h1>
+            </div>
+
+            <div class= "bag-card-image-container">
+
+              <img id = "bag-card-img" src= <%= bag.image %> width="300" height="300">
+              <div id = "bag-card-title-container">
+                <h2><%= link_to "Voir plus", bag_path(bag), class: 'link-to-title-bag-card' %></h2>
+              </div>
+            </div>
+
+            <div id = "bag-card-text">
+              <p><strong>Volume :</strong> <%= bag.capacity %> litres</p>
+              <p><strong>Poids :</strong> <%= bag.weight %> kg</p>
+              <p><strong>Usage :</strong> <%= bag.usage %></p>
+              <p><strong>Ville :</strong> <%= bag.address %></p>
+            </div>
+          </div>
+        <% end %>
       </div>
+    <% else %>
+      <p>Aucun sac disponible! Revenez plus tard!</p>
     <% end %>
-  </div>
-<% else %>
-  <p>Aucun sac disponible! Revenez plus tard!</p>
-<% end %>
+</div>

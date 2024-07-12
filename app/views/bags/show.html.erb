@@ -1,15 +1,26 @@
-<div class="bag-details">
+<div id = "show-section">
 
-<h1><%= @bag.brand %></h1>
 
-<p><strong>Volume :</strong> <%= @bag.capacity %> litres</p>
-<p><strong>Poids :</strong> <%= @bag.weight %> kg</p>
-<p><strong>Usage :</strong> <%= @bag.usage %></p>
-<p><strong>Ville :</strong> <%= @bag.address %></p>
-<p><strong>Etat :</strong> <%= @bag.state %></p>
-<p><strong>Tarif journalier : </strong><%= @bag.daily_price %>€ per day</p>
+  <div class="bag-details">
+    <h1 id = "show-h1"><%= @bag.brand %></h1>
+    <div class="bag-card-image-container">
+      <img id="bag-card-img" src="<%= @bag.image %>" width="300" height="300">
+      <div id="bag-card-title-container">
 
-<%= link_to 'Retour', bags_path, class: 'btn btn-secondary' %>
-<%= link_to 'Réserver ce sac!', new_bag_booking_path(@bag), class: 'btn btn-success' %>
+      </div>
+    </div>
+  <div class = "show-text-details">
+      <p><strong>Volume :</strong> <%= @bag.capacity %> litres</p>
+      <p><strong>Poids :</strong> <%= @bag.weight %> kg</p>
+      <p><strong>Usage :</strong> <%= @bag.usage %></p>
+      <p><strong>Ville :</strong> <%= @bag.address %></p>
+      <p><strong>Etat :</strong> <%= @bag.state %></p>
+      <p><strong>Tarif journalier :</strong> <%= @bag.daily_price %>€ per day</p>
+    </div>
+    <div class = "cta-show">
+      <%= link_to 'Retour', bags_path, class: 'btn btn-secondary' %>
+      <%= link_to 'Réserver ce sac !', new_bag_booking_path(@bag), class: 'btn btn-success' %>
+    </div>
 
+  </div>
 </div>
