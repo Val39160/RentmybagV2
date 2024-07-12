@@ -1,123 +1,68 @@
+// Existing imports and styles...
+
 #container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: #FFFCF5;
+  padding: 20px;
 }
 
-.first-container {
-  display: flex;
-  margin-top: 50px;
-  text-align: center;
-  width: 75%;
-  justify-content: space-between;
-}
-
-.first-container li {
-  margin: 10px;
-}
-
-.first-container h2 {
-  border-bottom: 3px solid #807153;
-  padding-bottom: 10px;
-}
-
-.second-container {
-  width: 75%;
-}
-
-.second-container li {
+.first-container, .second-container {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
-  position: relative;
-  padding: 0 70px;
-  font-size: 20px;
+  gap: 20px;
+  margin-bottom: 20px;
 }
 
-.second-container h2 {
-  border-bottom: 3px solid #807153;
-  padding-bottom: 10px;
-}
-
-.card-profile {
-overflow: hidden;
-background: white;
-box-shadow: 0 0 15px rgba(0,0,0,0.2);
-width: 500px;
-padding: 20px;
-border-radius: 12px;
-}
-
-.card-bags {
-  overflow: hidden;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  width: 500px;
-  margin-left: 15px;
+.card-profile, .card-bags, .card-reservations, .card-demandes {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  border-radius: 12px;
+  flex: 1;
+  transition: box-shadow 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
 }
 
-.card-bags p {
-  margin: 35px 0;
+.card-profile .avatar-large {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 20px;
 }
 
-.card-reservations {
-  justify-content: center;
-  margin: 50px 0;
-  text-align: center;
-  overflow: hidden;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  padding: 20px;
-  border-radius: 12px;
-}
-.booking-date {
-  text-align: end;
-  padding-right: 20px;
-  font-size: smaller;
+.card-profile ul {
+  list-style: none;
+  padding: 0;
+
+  li {
+    margin-bottom: 10px;
+  }
 }
 
-.card-demandes {
-  justify-content: center;
-  margin: 50px 0;
-  text-align: center;
-  overflow: hidden;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  padding: 20px;
-  border-radius: 12px;
+.card-bags p, .card-reservations li, .card-demandes li {
+  margin: 10px 0;
 }
 
-ul {
+.card-reservations ul, .card-demandes ol {
   list-style: none;
   padding: 0;
 }
 
-.avatar-large {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
+.booking-date {
+  color: #777;
+  font-size: 14px;
 }
 
-    // buttons //
-
-.btn-primary {
-  background-color: #ffb726;
-  border: none;
-  border-radius: 4px;
-  color: #ffffff;
-  cursor: pointer;
-  display: block;
-  font-size: 1rem;
-  margin: 1rem;
-  padding: 0.5rem 1rem;
-  text-align: center;
-  text-decoration: none;
+.total {
+  margin-top: 20px;
+  font-weight: bold;
+  font-size: 16px;
 }
 
-.btn-primary:hover {
-  background-color: #FFAA00;
+// Existing styles...
+
+.navbar-search-select option:first-child {
+  color: #888; /* Use the variable for the prompt color */
 }
