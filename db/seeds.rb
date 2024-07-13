@@ -14,29 +14,22 @@ User.destroy_all
 
 
 user1 = User.create!(
-  name: 'Asya',
+  name: 'Valentin',
   email: 'user1@exemple.com',
   password: 'password1',
   password_confirmation: 'password1',
-  phone_number: '06 79 90 12 34',
-  address: '37 avenue Trudaine, 75009 Paris, France'
+  phone_number: '0767838453',
+  address: '28 chemin des jonquilles 39160 Saint-Amour, France',
+
 )
 
-user2 = User.create!(
-  name: 'Nicolas',
-  email: 'user2@exemple.com',
-  password: 'password2',
-  password_confirmation: 'password2',
-  phone_number: '07 78 90 12 34',
-  address: '13 place de la Poissonnerie, 56000 Vannes, France'
-)
 
 Bag.create!(
   brand: 'Samsonite',
   state: 'Neuf',
   capacity: 40,
   usage: 'Business',
-  address: 'Paris',
+  address: 'Place des terreaux, 69001 Lyon, France',
   weight: 3.5,
   daily_price: 10.0,
   user: user1,
@@ -48,7 +41,7 @@ Bag.create!(
   state: 'Bon',
   capacity: 50,
   usage: 'Loisirs',
-  address: 'Paris',
+  address: 'hotel de ville 75004 Paris, France',
   weight: 4.0,
   daily_price: 10.0,
   user: user1,
@@ -60,10 +53,10 @@ Bag.create!(
   state: 'Excellent',
   capacity: 60,
   usage: 'Aventure',
-  address: 'Vannes',
+  address: 'marseille, France',
   weight: 4.5,
   daily_price: 10.0,
-  user: user2,
+  user: user1,
   image: 'https://plus.unsplash.com/premium_photo-1684407616508-b9e82c8bc8a0?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
 )
 
@@ -72,10 +65,10 @@ Bag.create!(
   state: 'Normal',
   capacity: 55,
   usage: 'Business',
-  address: 'Vannes',
+  address: 'corse, France',
   weight: 5.0,
   daily_price: 12.0,
-  user: user2,
+  user: user1,
   image: 'https://images.unsplash.com/photo-1564209906116-fb6887675069?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
 )
 
@@ -99,7 +92,7 @@ Bag.create!(
   address: 'Vannes',
   weight: 6.0,
   daily_price: 25.0,
-  user: user2,
+  user: user1,
   image: 'https://images.unsplash.com/photo-1718702662411-11d9672eb179?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
 )
 

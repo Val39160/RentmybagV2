@@ -80,3 +80,4 @@ gem 'devise'
 gem 'cloudinary'
 gem 'faraday'
 gem "pg_search"
+gem "geocoder"
