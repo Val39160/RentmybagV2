@@ -14,6 +14,14 @@ class BagsController < ApplicationController
     else
       @bags = Bag.all
     end
+
+    @markers = @bags.geocoded.map do |bag|
+      {
+        lat: bag.latitude,
+        lng: bag.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: {bag: bag})
+      }
+    end
   end
 
   # def index
